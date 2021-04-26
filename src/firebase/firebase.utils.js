@@ -16,8 +16,47 @@ const firebaseConfig = {
     messagingSenderId: "411165256871",
     appId: "1:411165256871:web:fd7aec5e8c5cd8f0ba3f82",
     measurementId: "G-TXQ6V865JE"
-  };
+};
+
+// Create a piece of user information in the firestore database only when we get userAuth object, which means when the user signs in with Google
+export const createUserProfileDocument = async (userAuth, additionalData) => {
   
+  // If we don't get back userAuth object, then stop exit this function
+  if (!userAuth) {
+    return;
+  }
+
+  // If we get userAuth object back, query inside the firestore database to see if this user data already exists by using the uid
+  // It gives us a documentReference object which can then be used to get snapShot object by calling .get() method
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
+  const snapShot = await userRef.get();
+
+  // The .exists property of the snapshot tells us whether this user information already exists in this path in the firestore database or not
+  // If this user information does not, store it right at this path.
+  if (!snapShot.exists) {
+    const { displayName, email } = userAuth;
+    const createAt = new Date();
+
+    try {
+
+      // Using .set() method upon documentReference to create document
+      await userRef.set({
+        displayName,
+        email,
+        createAt,
+        ...additionalData
+      })
+    } catch (error) {
+      console.log('error creating user', error.message);
+    }
+  }
+
+  // This createUserProfileDocument will always return the documentReference object back
+  return userRef;
+}
+  
+
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 // firebase.analytics();
