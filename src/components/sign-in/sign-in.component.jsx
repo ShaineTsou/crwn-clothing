@@ -3,7 +3,7 @@ import React from 'react';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
-import { signInWithGoogle } from '../../firebase/firebase.utils';
+import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
 
 import './sign-in.styles.scss';
 
@@ -17,9 +17,19 @@ class SignIn extends React.Component {
         };
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = async (event) => {
         // Prevent the default submit action from firing in order for us to have full control over what exactly this submit will do.
         event.preventDefault();
+        
+        const { email, password } = this.state;
+
+        try {
+            await auth.signInWithEmailAndPassword(email, password);
+            this.setState({ email: '', password: '' });
+        } catch (error) {
+            console.log(error);
+        }
+
 
         // Clear up the email and password field once the form is submitted
         this.setState({ email: '', password: '' });
@@ -34,24 +44,24 @@ class SignIn extends React.Component {
     render() {
         return (
             <div className='sign-in'>
-                <h2>I already have an account</h2>
+                <h2 className='title'>I already have an account</h2>
                 <span>Sign in with your email and password</span>
 
-                <form onSubmit={this.handleSubmit}>
+                <form className='sign-in-form' onSubmit={this.handleSubmit}>
                     <FormInput 
                         type='email'
                         name='email'
                         value={this.state.email}
                         handleChange={this.handleChange}
-                        label='email'
+                        label='Email'
                         required
-                        />
+                    />
                     <FormInput 
                         type='password'
                         name='password'
                         value={this.state.password}
                         handleChange={this.handleChange}
-                        label='password'
+                        label='Password'
                         required
                     />
                     <div className='buttons'>

@@ -43,6 +43,8 @@ class App extends React.Component {
   }
 
   componentWillUnmount() {
+
+    // In order to prevent any memory leaks, whenever the app unmounts, unsubscribe from the listener that is just initiated.
     this.unsubscribeFromAuth();
   }
 
