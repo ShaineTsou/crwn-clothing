@@ -17,8 +17,6 @@ import {
     OptionStyles
 } from './header.styles';
 
-// import './header.styles.scss';
-
 const Header = ({ currentUser, dropdownHidden }) => (
     <HeaderContainer>
         <LogoContainer to='/'>
