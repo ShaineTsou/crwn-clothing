@@ -3,11 +3,11 @@ import React from 'react';
 import './custom-button.styles.scss';
 
 // Presentational Component (i.e. functional component with no state)
-const CustomButton = ({ children, isGoogleSignIn, inverted, ...otherProps }) => (
+const CustomButton = ({ children, googleSignIn, inverted, ...otherProps }) => (
     <button 
         className={`
             ${inverted ? 'inverted' : ''}
-            ${isGoogleSignIn ? 'google-sign-in' : ''}
+            ${googleSignIn ? 'google-sign-in' : ''}
             custom-button
         `} {...otherProps}>
         {children}
