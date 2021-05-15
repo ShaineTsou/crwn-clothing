@@ -69,6 +69,26 @@ export const addCollectionAndDocuments = async (collectionKey, arrayOfObjectsToA
   return await batch.commit();
 }
 
+export const convertCollectionsSnapshotToMap = (collections) => {
+  const transformedCollections = collections.docs.map(doc => {
+    const { title, items } = doc.data();
+
+    return {
+      routeName: encodeURI(title.toLowerCase()),
+      id: doc.id,
+      title,
+      items
+    }
+  });
+
+  // transformedColelctions is an array, we want to convert to an object, which is called 'data normalization'
+  return transformedCollections.reduce((accumulator, collection) => {
+    accumulator[collection.title.toLowerCase()] = collection;
+    return accumulator;
+  }, {});
+
+}
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 // firebase.analytics();
