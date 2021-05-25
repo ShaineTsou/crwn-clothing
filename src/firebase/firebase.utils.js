@@ -97,11 +97,11 @@ export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
 // Create an instance of the Google provider object
-const provider = new firebase.auth.GoogleAuthProvider();
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
 
-// Specify additional custom OAuth provider parameters to trigger the Google popup
-provider.setCustomParameters({ prompt: 'select_account' });
+// Specify additional custom OAuth googleProvider parameters to trigger the Google popup
+googleProvider.setCustomParameters({ prompt: 'select_account' });
 
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
+export const signInWithGoogle = () => auth.signInWithPopup(googleProvider);
 export default firebase;
 
