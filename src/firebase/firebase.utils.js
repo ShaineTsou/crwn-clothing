@@ -21,7 +21,7 @@ const firebaseConfig = {
 // Create a piece of user information in the firestore database only when we get userAuth object, which means when the user signs in with Google
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   
-  // If we don't get back userAuth object, then stop exit this function
+  // If we don't get back userAuth object, then stop and exit this function
   if (!userAuth) {
     return;
   }
@@ -81,7 +81,7 @@ export const convertCollectionsSnapshotToMap = (collections) => {
     }
   });
 
-  // transformedColelctions is an array, we want to convert to an object, which is called 'data normalization'
+  // transformedCollections is an array, we want to convert it to an object, which is called 'data normalization'
   return transformedCollections.reduce((accumulator, collection) => {
     accumulator[collection.title.toLowerCase()] = collection;
     return accumulator;
