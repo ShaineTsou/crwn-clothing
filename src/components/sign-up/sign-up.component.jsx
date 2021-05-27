@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
-// import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
-
 import { signUpStart } from '../../redux/user/user.actions';
 
 import './sign-up.styles.scss';
@@ -40,9 +38,6 @@ class SignUp extends React.Component {
         }
 
         signUpStart({ email, password, displayName });
-        // // This function returns us a user auth object, use it to create user profile document in firestore database
-        // const { user } = await auth.createUserWithEmailAndPassword(email, password);
-        // await createUserProfileDocument(user, { displayName });
     }
 
     render() {
