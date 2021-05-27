@@ -36,7 +36,6 @@ class SignUp extends React.Component {
             alert('Passwords don\'t match');
             return;
         }
-
         signUpStart({ email, password, displayName });
     }
 
