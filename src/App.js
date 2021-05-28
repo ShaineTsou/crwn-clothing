@@ -20,27 +20,9 @@ class App extends React.Component {
   componentDidMount() {
     const { checkUserSession } = this.props;
     checkUserSession();
-    // this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-    //   if (userAuth) {
-    //     const userRef = await createUserProfileDocument(userAuth);
-  
-    //     // Use this documentReference to listen for the documentSnapshot events
-    //     userRef.onSnapshot(snapShot => {
-    //       setCurrentUser({
-    //         id: snapShot.id,
-    //         ...snapShot.data()
-    //       });
-    //     });
-    //   } else {
-        
-    //     // If the userAuth comes back as null, which means the user signs out, set the currentUser state to null
-    //     setCurrentUser(userAuth);
-    //   }
-    // })
   }
 
   componentWillUnmount() {
-
     // In order to prevent any memory leaks, whenever the app unmounts, unsubscribe from the listener that is just initiated.
     this.unsubscribeFromAuth();
   }
