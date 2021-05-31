@@ -1,9 +1,14 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 
+import { clearCart } from '../../redux/cart/cart.actions';
+
 // Stripe processes prices in cents
 const StripeCheckoutButton = ({ price }) => {
+    const dispatch = useDispatch();
+
     const priceForStripe = price * 100;
     const publishableKey = 'pk_test_51IpZyrInMmVzIPA6DZ1cBynqv4nZuDPb0ZOO6pV1t0r0xXX8uzOSHF3bw5bxGh8eBpWI7oIb3aw7bdYrSNM0EYGh00qgBFdE1p';
 
@@ -20,6 +25,7 @@ const StripeCheckoutButton = ({ price }) => {
         })
             .then(response => {
                 alert('Payment successful')
+                dispatch(clearCart());
             })
             .catch(error => {
                 console.log('Payment error: ', JSON.parse(error));
