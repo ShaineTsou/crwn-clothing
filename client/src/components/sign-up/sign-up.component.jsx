@@ -6,7 +6,7 @@ import CustomButton from '../custom-button/custom-button.component';
 
 import { signUpStart } from '../../redux/user/user.actions';
 
-import './sign-up.styles.scss';
+import { SignUpContainer, SignUpTitle } from './sign-up.styles';
 
 const SignUp = () => {
     const dispatch = useDispatch();
@@ -37,8 +37,8 @@ const SignUp = () => {
     };
 
     return (
-        <div className='sign-up'>
-            <h2 className='title'>I do not have an account</h2>
+        <SignUpContainer>
+            <SignUpTitle>I do not have an account</SignUpTitle>
             <span>Sign up with your email and password</span>
             
             <form className='sign-up-form' onSubmit={handleSubmit}>
@@ -76,7 +76,7 @@ const SignUp = () => {
                 />
                 <CustomButton type='submit'>Sign Up</CustomButton>
             </form>
-        </div>
+        </SignUpContainer>
     )
 }
 
