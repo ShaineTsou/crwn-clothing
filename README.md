@@ -1,3 +1,3 @@
-### OWL Clothing E-commerce Demo
+### CRWN Clothing E-commerce
 
-Course of [ZTM Complete React Developer](https://www.udemy.com/course/complete-react-developer-zero-to-mastery/)
+A fancy clothing website easy for you to grab your style.
