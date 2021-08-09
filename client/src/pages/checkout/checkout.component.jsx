@@ -6,15 +6,15 @@ import { selectCartItems, selectCartTotal } from '../../redux/cart/cart.selector
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
 
-import './checkout.styles.scss';
+import { CheckoutPageContainer, CheckoutHeaderContainer } from './checkout.styles';
 
 const CheckoutPage = () => {
     const cartItems = useSelector(selectCartItems);
     const total = useSelector(selectCartTotal);
 
     return (
-        <div className='checkout-page'>
-            <div className='checkout-header'>
+        <CheckoutPageContainer>
+            <CheckoutHeaderContainer>
                 <div className='header-block'>
                     <span>Product</span>
                 </div>
@@ -30,7 +30,7 @@ const CheckoutPage = () => {
                 <div className='header-block'>
                     <span>Remove</span>
                 </div>
-            </div>
+            </CheckoutHeaderContainer>
             {
                 cartItems.map(cartItem => (
                     <CheckoutItem key={cartItem.id} cartItem={cartItem} />
@@ -45,7 +45,7 @@ const CheckoutPage = () => {
                 Exp: 01/28 CVV: 456
             </div>
             <StripeCheckoutButton price={total} />
-        </div>
+        </CheckoutPageContainer>
     );
 }
 
