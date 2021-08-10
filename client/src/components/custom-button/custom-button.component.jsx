@@ -1,17 +1,11 @@
 import React from 'react';
 
-import './custom-button.styles.scss';
+import { CustomButtonContainer } from './custom-button.styles';
 
-// Presentational Component (i.e. functional component with no state)
-const CustomButton = ({ children, googleSignIn, inverted, ...otherProps }) => (
-    <button 
-        className={`
-            ${inverted ? 'inverted' : ''}
-            ${googleSignIn ? 'google-sign-in' : ''}
-            custom-button
-        `} {...otherProps}>
+const CustomButton = ({ children, ...otherProps }) => (
+    <CustomButtonContainer {...otherProps}>
         {children}
-    </button>
+    </CustomButtonContainer>
 )
 
 export default CustomButton;
