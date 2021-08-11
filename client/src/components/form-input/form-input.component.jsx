@@ -1,9 +1,9 @@
 import React from 'react';
 
-import './form-input.styles.scss';
+import { InputGroup } from './form-input.styles';
 
 const FormInput = ({ handleChange, label, ...otherProps }) => (
-    <div className='group'>
+    <InputGroup>
         <input 
             className='form-input'
             onChange={handleChange}
@@ -20,7 +20,7 @@ const FormInput = ({ handleChange, label, ...otherProps }) => (
                 </label> 
             ) : null
         }
-    </div>
+    </InputGroup>
 );
 
 export default FormInput;
