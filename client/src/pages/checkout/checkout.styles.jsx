@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const CheckoutPageContainer = styled.div`
-    width: 55%;
+    width: 70%;
     min-height: 90vh;
     display: flex;
     flex-direction: column;
@@ -24,6 +24,22 @@ export const CheckoutPageContainer = styled.div`
       margin-top: 40px;
       font-size: 22px;
       color: red
+    }
+
+    @media screen and (max-width: 800px) {
+      width: 90%;
+      .total {
+        margin-top: 20px;
+        font-size: 25px;
+      }
+
+      .test-warning {
+        font-size: 16px;
+      }
+
+      .header-block {
+        font-size: 14px;
+      }
     }
 `;
 

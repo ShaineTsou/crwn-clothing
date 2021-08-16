@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 
 export const SignInAndSignUpContainer = styled.div`
-    width: 70vw;
+    width: 80vw;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
     margin: 30px auto;
+
+    @media screen and (max-width: 800px) {
+        flex-wrap: wrap;
+    }
 `;

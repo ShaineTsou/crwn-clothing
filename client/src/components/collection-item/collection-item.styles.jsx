@@ -23,6 +23,13 @@ export const CollectionItemContainer = styled.div`
       position: absolute;
       top: 255px;
       display: none;
+
+      @media screen and (max-width: 800px) {
+        display: block;
+        opacity: 0.9;
+        min-width: unset;
+        padding: 0 10px;
+      }
     }
 
     &:hover {
@@ -35,6 +42,20 @@ export const CollectionItemContainer = styled.div`
         display: flex;
       }
     }
+
+    @media screen and (max-width: 800px) {
+      width: 40vw;
+
+      &:hover {
+        .image {
+          opacity: unset;
+        }
+
+        button {
+          opacity: unset;
+        }
+      }
+    }
 `;
 
 export const CollectionFooterContainer = styled.div`
@@ -45,11 +66,28 @@ export const CollectionFooterContainer = styled.div`
     font-size: 18px;
 
     .name {
-      width: 90%;
+      width: 80%;
       margin-bottom: 15px;
+
+      line-height: 25px;
+      margin-top: 5px;
     }
 
     .price {
-      width: 10%;
+      text-align: center;
+      width: 20%;
+    }
+
+    @media screen and (max-width: 800px) {
+        font-size: 16px;
+
+        .name {
+          width: 70%;
+          line-height: 20px;
+        }
+
+        .price {
+          width: 30%;
+        }
     }
 `;
