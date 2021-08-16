@@ -10,7 +10,7 @@ import Header from './components/header/header.component';
 import Spinner from './components/spinner/spinner.component';
 import ErrorBoundary from './components/error-boundary/error-boundary.component';
 
-import './App.css';
+import { GlobalStyle } from './global.styles';
 
 const ShopPage = lazy(() => import('./pages/shop/shop.component'));
 const CheckoutPage = lazy(() => import('./pages/checkout/checkout.component'));
@@ -26,6 +26,7 @@ const App = () => {
 
   return(
     <div>
+      <GlobalStyle />
       <Header />
       <Switch>
         <ErrorBoundary>
