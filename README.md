@@ -1,3 +1,17 @@
-### CRWN Clothing E-commerce
+### CRWN Clothing
 
-A fancy clothing website easy for you to grab your style.
+An e-commerce website built using React, Redux and styled-components
+
+## Lanuages
+- JavaScript
+- Sass
+- HTML5
+
+## Core Features
+- User authentication
+- Adding items to cart
+- Payment with Stripe API
+
+## Technologies
+- Firebase
+- [Stripe API](https://stripe.com/)
