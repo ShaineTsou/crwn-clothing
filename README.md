@@ -1,5 +1,5 @@
-### CRWN Clothing
-
+# CRWN Clothing
+![Image of CRWN Clothing Home Page](./client/public/crwn-clothing.png)
 An e-commerce website built using React, Redux and styled-components
 
 ## Lanuages
