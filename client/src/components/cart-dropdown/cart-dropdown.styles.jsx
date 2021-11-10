@@ -11,20 +11,20 @@ export const CartDropdownContainer = styled.div`
 
   z-index: 3000;
   transition: 0.3s ease-in-out;
+`;
+
+export const CartItemsContainer = styled.div`
+  display: none;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
 
   .empty-message {
     font-size: 18px;
     margin: 50px auto;
     color: gray;
   }
-`;
-
-export const CartItemsContainer = styled.div`
-  display: none;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  overflow: scroll;
 `;
 
 export const CartFooterContainer = styled.div`

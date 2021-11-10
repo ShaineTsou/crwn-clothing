@@ -12,7 +12,7 @@ export const CartContainer = styled.div`
         box-shadow: 0px 1px 7px 0px gray;
 
         .cart-items {
-          display: block;
+          display: flex;
         }
 
         .cart-footer {
