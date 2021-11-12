@@ -5,7 +5,7 @@ export const CartDropdownContainer = styled.div`
   top: 100%;
   right: 10%;
 
-  width: 280px;
+  width: 320px;
   height: 0px;
   background-color: white;
 
@@ -42,8 +42,9 @@ export const CartFooterContainer = styled.div`
   text-align: center;
 
   padding: 10px 5px;
-  /* .cart-total {
-    margin: 10px 5px 5px;
+
+  .cart-total {
+    margin: 5px;
     font-size: 1.5em;
-  } */
+  }
 `;

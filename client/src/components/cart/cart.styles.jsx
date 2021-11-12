@@ -7,7 +7,7 @@ export const CartContainer = styled.div`
     &:hover {
       .cart-dropdown {
         display: block;
-        height: 340px;
+        height: 400px;
         padding: 5px 10px;
         box-shadow: 0px 1px 7px 0px gray;
 
